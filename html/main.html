@@ -26,7 +26,38 @@
     </div>  
 </div>
 <div class="container">
-    <header>header</header>
+    <header>
+        <div class="header_alarm">
+            <img src="https://img.icons8.com/material-rounded/50/000000/alarm.png" />
+            <span class="alarm_badge">3</span>
+        </div>
+        <div class="header_title">
+            <img src="logo.png" />
+            <span>Engineering&nbsp;</span>
+            <span class="bold900">blog</span>
+        </div>
+        <div class="header_right">
+            <a href="#">
+                <div class="signup">
+                    <span >Sign Up</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="signin">
+                    <span>Sign In</span>
+                </div>
+            </a>
+            <a href="#">
+                <div class="Hamburger">
+                    <div class="menu-btn style-3">
+                        <span class="menu-row top"></span>
+                        <span class="menu-row mid"></span>
+                        <span class="menu-row bot"></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </header>
     <div class="left_menu">
         <div class="categories">
             <div>
@@ -114,6 +145,14 @@
 <footer>
     Copyright 2020. ha-co. All rights reserved
 </footer>
+<script>
+    window.onload = function () {
+        const elements = document.querySelector('.menu-btn');
+        elements.addEventListener('click', function () {
+            this.classList.toggle('open');
+        });
+    }
+</script>
 </body>
 
 </html>

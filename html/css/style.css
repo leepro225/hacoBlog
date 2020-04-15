@@ -1,14 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:200,300,300i,400,500,600,700,700i&display=swap');
+/* pc 우선 css */
+@import url('https://fonts.googleapis.com/css?family=Muli:200,300,300i,400,500,600,700,700i,900&display=swap');
 body {
     background: #f6f2f1;
     width: 100vw;
     height: 100vh;
     position: relative;
     font-family: 'Muli', sans-serif;
+    overflow: hidden;
 }
 header {
     height: 65px;
     border-bottom: 3px solid black;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    align-items: center;
 }
 footer {
         position: absolute;
@@ -20,6 +26,12 @@ footer {
 }
 input:focus {outline:none;}
 
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+}
 .top {
     display: flex;
     justify-content: space-between;
@@ -64,12 +76,25 @@ input:focus {outline:none;}
     margin: 0 auto;
     height: calc(100% - 100px);
 }
+.container::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 47px;
+    height: calc(100% - 94px);
+    background: #f6f2f1;
+    z-index: 1;
+    margin-top: 50px;
+}
 
 .left_menu {
     float: left;
     width: 250px;
     height: calc(100% - 68px);
     border-right: 3px solid black;
+    transition-property: opacity margin-left;
+	transition-duration: 1s;
 }
 
 .section_wrapper {
@@ -160,3 +185,250 @@ input:focus {outline:none;}
 .pointer {
     cursor: pointer;
 }
+
+.header_alarm {
+    position: relative;
+}
+.header_alarm > img{
+    width: 35px;
+    padding-left: 20px;
+}
+
+.alarm_badge {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #e04848;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 0.825rem;
+    line-height: 20px;
+    top: 18px;
+    color: #fff;
+    right: -8px;
+}
+.header_title {
+    display: flex;
+    align-items: center;
+}
+.header_title > img {
+    width: 50px;
+}
+.bold900 {
+    font-weight: 900;
+}
+.header_right {
+    display: flex;
+}
+.signup {
+    padding: 23px;
+    border-left: 2px solid #000;
+}
+.signin {
+    padding: 23px;
+    background: #000;
+}
+.signin span {
+    color: #fff;
+}
+
+.header_right > a:nth-child(3) {
+    display: none;
+}
+
+/* HamburgerMenu css Start */
+.menu-btn {
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1000;
+}
+.menu-btn .menu-row {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 1px;
+}
+.menu-btn .menu-row {
+  left: 0;
+  background-color: #747474;
+}
+
+.menu-btn.style-3 .menu-row {
+  visibility: visible;
+  -webkit-transform-origin: 2px 50%;
+          transform-origin: 2px 50%;
+  -webkit-transition: all 500ms cubic-bezier(0.8, -0.25, 0.2, 1.25);
+  transition: all 500ms cubic-bezier(0.8, -0.25, 0.2, 1.25);
+}
+.menu-btn.style-3 .menu-row.top {
+  -webkit-transform: translate(0%, -11px) rotate(0deg) translateZ(0) scale(1, 1);
+          transform: translate(0%, -11px) rotate(0deg) translateZ(0) scale(1, 1);
+}
+.menu-btn.style-3 .menu-row.mid {
+  opacity: 1;
+  -webkit-transform: translate(0%, 0px) translateZ(0) scale(1, 1);
+          transform: translate(0%, 0px) translateZ(0) scale(1, 1);
+}
+.menu-btn.style-3 .menu-row.bot {
+  -webkit-transform: translate(0%, 11px) rotate(0deg) translateZ(0) scale(1, 1);
+          transform: translate(0%, 11px) rotate(0deg) translateZ(0) scale(1, 1);
+}
+.menu-btn.style-3.open .menu-row {
+  -webkit-transition: all 0ms linear;
+  transition: all 0ms linear;
+}
+.menu-btn.style-3.open .menu-row.top {
+  -webkit-transform: translate(calc(80% - 1px), -11px) rotate(-225deg) translateZ(0) scale(1, 1);
+          transform: translate(calc(80% - 1px), -11px) rotate(-225deg) translateZ(0) scale(1, 1);
+  -webkit-animation: key-3-top 500ms cubic-bezier(0.8, -0.25, 0.2, 1.25);
+          animation: key-3-top 500ms cubic-bezier(0.8, -0.25, 0.2, 1.25);
+}
+.menu-btn.style-3.open .menu-row.mid {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(50%, 0px) translateZ(0) scale(1, 1);
+          transform: translate(50%, 0px) translateZ(0) scale(1, 1);
+  -webkit-animation: key-3-mid 500ms cubic-bezier(0.8, -0.25, 0.2, 1.25);
+          animation: key-3-mid 500ms cubic-bezier(0.8, -0.25, 0.2, 1.25);
+}
+.menu-btn.style-3.open .menu-row.bot {
+  -webkit-transform: translate(calc(80% - 1px), 11px) rotate(225deg) translateZ(0) scale(1, 1);
+          transform: translate(calc(80% - 1px), 11px) rotate(225deg) translateZ(0) scale(1, 1);
+  -webkit-animation: key-3-bot 500ms cubic-bezier(0.8, -0.25, 0.2, 1.25);
+          animation: key-3-bot 500ms cubic-bezier(0.8, -0.25, 0.2, 1.25);
+}
+
+@-webkit-keyframes key-3-top {
+  0% {
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(0%, -11px) rotate(0deg) translateZ(0) scale(1, 1);
+            transform: translate(0%, -11px) rotate(0deg) translateZ(0) scale(1, 1);
+  }
+  100% {
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(calc(-80% + 2px), -11px) rotate(225deg) translateZ(0) scale(1, 1);
+            transform: translate(calc(-80% + 2px), -11px) rotate(225deg) translateZ(0) scale(1, 1);
+  }
+}
+
+@keyframes key-3-top {
+  0% {
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(0%, -11px) rotate(0deg) translateZ(0) scale(1, 1);
+            transform: translate(0%, -11px) rotate(0deg) translateZ(0) scale(1, 1);
+  }
+  100% {
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(calc(-80% + 2px), -11px) rotate(225deg) translateZ(0) scale(1, 1);
+            transform: translate(calc(-80% + 2px), -11px) rotate(225deg) translateZ(0) scale(1, 1);
+  }
+}
+@-webkit-keyframes key-3-mid {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(0%, 0px) translateZ(0) scale(1, 1);
+            transform: translate(0%, 0px) translateZ(0) scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    visibility: visible;
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(-50%, 0px) translateZ(0) scale(1, 1);
+            transform: translate(-50%, 0px) translateZ(0) scale(1, 1);
+  }
+}
+@keyframes key-3-mid {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(0%, 0px) translateZ(0) scale(1, 1);
+            transform: translate(0%, 0px) translateZ(0) scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    visibility: visible;
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(-50%, 0px) translateZ(0) scale(1, 1);
+            transform: translate(-50%, 0px) translateZ(0) scale(1, 1);
+  }
+}
+@-webkit-keyframes key-3-bot {
+  0% {
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(0%, 11px) rotate(0deg) translateZ(0) scale(1, 1);
+            transform: translate(0%, 11px) rotate(0deg) translateZ(0) scale(1, 1);
+  }
+  100% {
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(calc(-80% + 2px), 11px) rotate(-225deg) translateZ(0) scale(1, 1);
+            transform: translate(calc(-80% + 2px), 11px) rotate(-225deg) translateZ(0) scale(1, 1);
+  }
+}
+@keyframes key-3-bot {
+  0% {
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(0%, 11px) rotate(0deg) translateZ(0) scale(1, 1);
+            transform: translate(0%, 11px) rotate(0deg) translateZ(0) scale(1, 1);
+  }
+  100% {
+    -webkit-transform-origin: calc(100% - 2px) 50%;
+            transform-origin: calc(100% - 2px) 50%;
+    -webkit-transform: translate(calc(-80% + 2px), 11px) rotate(-225deg) translateZ(0) scale(1, 1);
+            transform: translate(calc(-80% + 2px), 11px) rotate(-225deg) translateZ(0) scale(1, 1);
+  }
+}
+
+/* Hamburger Menu End */
+
+/* 작은 기기들 (ipad pro notebook, 1350px 이상) */
+@media (max-width: 1350px) { 
+    footer {
+        display: none;
+    }
+    
+    .top {
+        display: none;
+    }
+    .header_right>a:first-child,
+    .header_right>a:nth-child(2) {
+        display: none;
+    }
+    .left_menu {
+        opacity: 0;
+        /* left: 100%;   /*or bottom, top, right*/
+        margin-left: -300px;  
+        overflow: hidden;
+    }
+    .header_right > a:nth-child(3) {
+        display: block;
+    }
+    .container {
+        margin-top: 50px;
+    }
+    .container::after {
+        margin-top: 0px;
+    }
+}
+
+
+
+
